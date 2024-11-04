@@ -1,0 +1,3 @@
+[25-Oct-2023 11:39:00 Asia/Tashkent] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/jduuz/parents.jdu.uz/vendor/composer/platform_check.php on line 24
+[06-Dec-2023 23:06:27 Asia/Tashkent] PHP Warning:  readfile(): php_network_getaddresses: getaddrinfo for getcomposer.org failed: Name or service not known in Command line code on line 1
+[06-Dec-2023 23:06:27 Asia/Tashkent] PHP Warning:  readfile(https://getcomposer.org/installer): Failed to open stream: php_network_getaddresses: getaddrinfo for getcomposer.org failed: Name or service not known in Command line code on line 1
