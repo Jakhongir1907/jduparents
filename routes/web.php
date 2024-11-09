@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\Student;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,12 +15,19 @@ use App\Models\Student;
 
 
 
-Route::get('/' , [\App\Http\Controllers\StudentController::class , 'index']);
+
+
+
 
 Route::resource('students', \App\Http\Controllers\StudentController::class);
 Route::get('/json' , [\App\Http\Controllers\StudentController::class,'json']);
 
 // API data from Japan
 
+Route::get('/' , function (){
+    return view('welcome');
+});
 
+Route::get('/records' , [\App\Http\Controllers\RecordController::class , 'index']);
 
+Route::get('/get-data' , [\App\Http\Controllers\RecordController::class , 'getData']);
