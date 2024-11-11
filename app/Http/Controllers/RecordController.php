@@ -12,6 +12,9 @@ class RecordController extends Controller
 
 
     public function index(){
+
+        $this->getData();
+
         $records = Record::select(
             DB::raw("sum(subject_credit) as credits") ,
             'student_id','student_name','id')
@@ -34,7 +37,11 @@ class RecordController extends Controller
             Record::truncate();
             foreach ($data['records'] as $record) {
 
-                Record::create(
+                Record::updateOrCreate(
+                    [
+                        'student_id' => $record['studentId']['value'],
+                        'subject_id' => $record['subjectId']['value'],
+                    ],
                     [
                         'student_id' => $record['studentId']['value'],
                         'student_name' => $record['studentName']['value'],
@@ -43,6 +50,7 @@ class RecordController extends Controller
                         'grade' => $record['grade']['value'],
                 ]);
             }
+
 
             return response()->json([
                 'code' => 200,
