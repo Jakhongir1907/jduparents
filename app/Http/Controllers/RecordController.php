@@ -40,7 +40,7 @@ class RecordController extends Controller
                 Record::updateOrCreate(
                     [
                         'student_id' => $record['studentId']['value'],
-                        'subject_name' => $record['subject']['value'],
+                        'subject_id' => $record['subjectId']['value'],
                     ],
                     [
                         'student_name' => $record['studentName']['value'],
