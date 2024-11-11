@@ -34,7 +34,7 @@ class RecordController extends Controller
         if ($response1->successful()) {
 
             $data = $response1->json();
-            Record::truncate();
+
             foreach ($data['records'] as $record) {
 
                 Record::updateOrCreate(
