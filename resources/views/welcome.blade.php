@@ -13,7 +13,7 @@
         <a href="https://jdu.uz" class="flex-shrink-0">
             <img src="./images/logo.png" alt="Japan Digital University" class="w-20">
         </a>
-        <h1 class="text-center text-4xl font-semibold text-gray-800 flex-grow">JDU talabalar davomati</h1>
+        <h1 class="text-center text-4xl font-semibold text-gray-800 flex-grow">JDU talabalarining fanlardan olgan kreditlari va davomatlari</h1>
     </div>
 </header>
 
@@ -31,3 +31,5 @@
 <script type="text/javascript" src="https://parents.jdu.uz/js/script.js"></script>
 </body>
 </html>
+
+
