@@ -12,7 +12,7 @@
 <body>
 <header>
     <div class="container">
-        <a href="https://parents.jdu.uz"><img width="60px" src="../images/logo.png" alt="Japan Digital University"></a>
+        <a href="/students"><img width="60px" src="../images/logo.png" alt="Japan Digital University"></a>
         <h1>JDU talabalar davomati</h1>
         <div class="input-group">
             <input type="search" placeholder="Qidirish">

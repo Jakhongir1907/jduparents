@@ -71,7 +71,7 @@ class StudentController extends Controller
      */
     public function show($id)
     {
-        $subjects = Student::get()->where('studentId' , $id);
+        $subjects = Student::where('studentId' , $id)->get();
 //       $student = DB::table('students')->where('studentId')->first();
         $student = Student::where('studentId' , $id)->first();
        return view('students.show' , ['subjects' => $subjects , 'student' => $student]);
