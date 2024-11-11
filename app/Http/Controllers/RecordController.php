@@ -9,10 +9,7 @@ use Illuminate\Support\Facades\Http;
 
 class RecordController extends Controller
 {
-
-
     public function index(){
-
         $this->getData();
 
         $records = Record::select(

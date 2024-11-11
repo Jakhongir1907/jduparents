@@ -42,8 +42,8 @@
             @foreach($subjects as $subject)
                 <tr>
                     <td class="py-4 px-6 border-b border-gray-200">{{$subject->subject_name}}</td>
-                    <td class="py-4 px-6 border-b border-gray-200">{{$subject->subject_credit}}</td>
-                    <td class="py-4 px-6 border-b border-gray-200">{{$subject->grade}}</td>
+                    <td class=" py-4 px-6 border-b border-gray-200">{{$subject->subject_credit}}</td>
+                    <td class="{{($subject->grade == 'F' ? 'text-red-500' : 'text-green-500' )}} py-4 px-6 border-b border-gray-200">{{$subject->grade}}</td>
                 </tr>
             @endforeach
 
