@@ -43,7 +43,6 @@ class RecordController extends Controller
                         'subject_id' => $record['subjectId']['value'],
                     ],
                     [
-                        'student_id' => $record['studentId']['value'],
                         'student_name' => $record['studentName']['value'],
                         'subject_name' => $record['subject']['value'],
                         'subject_credit' => $record['subjectCredit']['value'],
