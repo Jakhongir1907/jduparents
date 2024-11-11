@@ -28,6 +28,5 @@ Route::get('/' , function (){
     return view('welcome');
 });
 
-Route::get('/records' , [\App\Http\Controllers\RecordController::class , 'index']);
-
+Route::resource('records', \App\Http\Controllers\RecordController::class);
 Route::get('/get-data' , [\App\Http\Controllers\RecordController::class , 'getData']);

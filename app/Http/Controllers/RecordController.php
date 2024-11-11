@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Record;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 
 class RecordController extends Controller
@@ -10,7 +12,13 @@ class RecordController extends Controller
 
 
     public function index(){
+        $records = Record::select(
+            DB::raw("sum(subject_credit) as credits") ,
+            'student_id','student_name','id')
+            ->groupBy('student_id')
+            ->get();
 
+        return view('records.index',['records' => $records]);
     }
 
     public function getData(){
@@ -23,21 +31,36 @@ class RecordController extends Controller
         if ($response1->successful()) {
 
             $data = $response1->json();
-            $count = 0;
+            Record::truncate();
             foreach ($data['records'] as $record) {
-                $count++;
+
+                Record::create(
+                    [
+                        'student_id' => $record['studentId']['value'],
+                        'student_name' => $record['studentName']['value'],
+                        'subject_name' => $record['subject']['value'],
+                        'subject_credit' => $record['subjectCredit']['value'],
+                        'grade' => $record['grade']['value'],
+                ]);
             }
 
-            return $count;
-
+            return response()->json([
+                'code' => 200,
+                'message' => 'Records have been fetched successfully',
+            ]);
         } else {
-            // Handle the error
             return response()->json(['error' => 'Failed to retrieve data'], $response1->status());
         }
 
 
-
-
     }
+
+    public function show($id){
+        $subjects = Record::where('student_id' , $id)->get();
+        $student = Record::where('student_id' , $id)->first();
+
+        return view('records.show' , ['subjects' => $subjects , 'student' => $student]);
+    }
+
 
 }
