@@ -32,5 +32,9 @@ class DataController extends Controller
                 ]
             );
         }
+        return response()->json([
+            'success' => true,
+            'message' => 'Data has been refreshed successfully'
+        ]);
     }
 }
