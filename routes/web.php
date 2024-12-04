@@ -13,12 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
-
-
-
-
 Route::resource('students', \App\Http\Controllers\StudentController::class);
 Route::get('/json' , [\App\Http\Controllers\StudentController::class,'json']);
 
@@ -27,6 +21,7 @@ Route::get('/json' , [\App\Http\Controllers\StudentController::class,'json']);
 Route::get('/' , function (){
     return redirect()->route('students.index');
 });
+Route::get('/refresh' , [\App\Http\Controllers\DataController::class,'refresh']);
 
 //Route::resource('records', \App\Http\Controllers\RecordController::class);
 Route::get('/get-data' , [\App\Http\Controllers\RecordController::class , 'getData']);
