@@ -25,8 +25,8 @@ Route::get('/json' , [\App\Http\Controllers\StudentController::class,'json']);
 // API data from Japan
 
 Route::get('/' , function (){
-    return view('welcome');
+    return redirect()->route('students.index');
 });
 
-Route::resource('records', \App\Http\Controllers\RecordController::class);
+//Route::resource('records', \App\Http\Controllers\RecordController::class);
 Route::get('/get-data' , [\App\Http\Controllers\RecordController::class , 'getData']);
